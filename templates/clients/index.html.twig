@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des clients{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-12">
+        {% if clients %}
+            {% for client in clients %}
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Name : {{ client.name }}</h2>
+                        <p class="card-text">Email : {{ client.email }}</p>
+                        <p class="card-text">Nombre de conso : {{ client.conso }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Aucun client</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
